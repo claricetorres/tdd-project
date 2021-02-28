@@ -1,0 +1,4 @@
+1 - Testes funcionais são direcionados para o contexto do sistema como um todo, testes de unidade independem desse contexto. 
+2 - Testes unitários podem ser reaproveitados para outros sistemas, desde que os métodos se encaixem na lógica do programa como um todo.
+
+#Na primeira aula eu tive um problema com meus arquivos e quando dei um pull para tentar consertar o que havia feito eu perdi alguns arquivos que tinha feito e não havia commitado. Por isso, este está neste commit. 
