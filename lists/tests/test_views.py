@@ -1,5 +1,6 @@
 from django.test import TestCase
 from lists.models import Item, List
+from django.utils.html import escape
 
 class HomePageTest(TestCase):
 
@@ -55,6 +56,11 @@ class NewListTest(TestCase):
         self.assertTemplateUsed(response, 'home.html')
         expected_error = escape("You can't have an empty list item")
         self.assertContains(response, expected_error)
+        
+    def test_invalid_list_items_arent_saved(self):
+        self.client.post('/lists/new', data={'item_text': ''})
+        self.assertEqual(List.objects.count(), 0)
+        self.assertEqual(Item.objects.count(), 0)
     
 class NewItemTest(TestCase):
 
